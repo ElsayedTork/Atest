@@ -4,9 +4,9 @@
       <div class="container">
         <section class="header-FlexContainer">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand" href="#"
+            <router-link to="/" class="navbar-brand" href="#"
               ><img src="../../assets/logo.svg" alt="" srcset=""
-            /></a>
+            /></router-link>
             <button
               class="navbar-toggler"
               type="button"
@@ -19,15 +19,6 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <router-link
-                  to="/"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >الرئيسية</router-link
-                >
-              </li>
               <li class="nav-item">
                 <router-link
                   to="/about"

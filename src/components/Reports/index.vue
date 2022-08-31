@@ -2,7 +2,7 @@
   <section class="Report">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-6 Report__start">
+        <div class="col-lg-6 Report__start">
           <div class="Report__start__flexContainer">
             <h3>التقويم</h3>
             <p>
@@ -11,7 +11,7 @@
             </p>
           </div>
         </div>
-        <div class="col-sm-6 Report__end"></div>
+        <div class="col-lg-6 Report__end"></div>
       </div>
     </div>
   </section>
@@ -40,11 +40,13 @@ export default {};
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--second-color);
+  margin-block-end: 0.6875rem;
 }
 .Report .Report__start p {
   font-weight: 500;
   color: var(--second-color);
-  width: 23.75rem;
+  width: 22.5rem;
+  line-height: 1.625rem;
 }
 
 .Report .Report__start .Report__start__flexContainer {
@@ -54,5 +56,22 @@ export default {};
   justify-content: center;
   height: 100%;
   padding-inline-start: 6.25rem;
+}
+
+@media (max-width: 992px) {
+  .Report__start__flexContainer {
+    padding-block: 2rem;
+  }
+  .Report .Report__start p {
+    width: 75%;
+    line-height: 1.625rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .Report .Report__start p {
+    width: 100%;
+    line-height: 1.625rem;
+  }
 }
 </style>

@@ -81,9 +81,9 @@ footer {
   padding-block: 3rem;
 }
 footer .footer__container {
-  display: grid;
-  grid-template-columns: 35% 30% 35%;
+  display: flex;
 }
+
 footer .footer__container h3 {
   font-size: 1.125rem;
   font-weight: 700;
@@ -116,8 +116,8 @@ footer .footer__container_center ul li a {
 }
 
 footer .Footer_GridContainer {
-  display: grid;
-  grid-template-columns: 35% 30% 35%;
+  display: flex;
+  justify-content: space-between;
 }
 
 footer .footer-rights {
@@ -129,5 +129,18 @@ footer .footer__privacy {
 
 footer .footer__privacy a {
   color: #1d1d26 !important;
+}
+
+@media (max-width: 992px) {
+  footer .footer__container {
+    display: block;
+  }
+  footer .Footer_GridContainer {
+    text-align: center;
+    display: block;
+  }
+  footer .Footer_GridContainer div {
+    padding-block-start: 1.25rem;
+  }
 }
 </style>

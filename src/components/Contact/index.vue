@@ -6,7 +6,7 @@
     <font-awesome-icon icon="fa-brands fa-facebook" />
     <div class="container">
       <div class="row">
-        <div class="col-sm-4">
+        <div class="col-md-5">
           <header>
             <h3>نحب أن نسمع منك</h3>
             <p>اذا كان لديك أي استفسارات تواصلي معنا</p>
@@ -27,7 +27,7 @@
           <!-- Social Icons  -->
           <SharedSocial></SharedSocial>
         </div>
-        <div class="col-sm-8">
+        <div class="col-md-7">
           <div class="d-flex justify-content-center align-items-end">
             <form @submit.prevent="submitContact">
               <div class="row">
@@ -38,7 +38,7 @@
                     >
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control shadow-none"
                       id="exampleInputName"
                       placeholder="اسم المستخدم"
                       aria-describedby="emailHelp"
@@ -46,19 +46,19 @@
                     />
                   </div>
                 </div>
+
                 <div class="col-6">
                   <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"
-                      >البريد الإلكتروني</label
+                    <label for="exampleInputName" class="form-label"
+                      >البريد الالكتروني</label
                     >
                     <input
                       type="email"
-                      dir="rtl"
-                      class="form-control"
-                      placeholder="البريد الالكتروني"
-                      id="exampleInputEmail1"
+                      class="form-control shadow-none"
+                      id="exampleInputName"
+                      placeholder="example@gmail.com"
                       aria-describedby="emailHelp"
-                      v-model="formData.email"
+                      v-model="formData.emailForm"
                     />
                   </div>
                 </div>
@@ -70,7 +70,7 @@
                   >
                   <input
                     type="text"
-                    class="form-control"
+                    class="form-control shadow-none"
                     id="exampleInputName"
                     placeholder="عنوان الموضوع"
                     aria-describedby="emailHelp"
@@ -84,7 +84,7 @@
                     >الرسالة</label
                   >
                   <textarea
-                    class="form-control"
+                    class="form-control shadow-none"
                     placeholder="أكتب رسالتك..."
                     id="exampleFormControlTextarea1"
                     rows="3"
@@ -129,6 +129,7 @@ export default {
         'https://about-vue-call-default-rtdb.firebaseio.com/formData.json',
         this.formData
       );
+      this.formData = [];
     },
   },
 };
@@ -154,7 +155,8 @@ section.contact header p {
 
 section.contact form {
   background-color: #fff;
-  max-width: 39.25rem;
+  /*  max-width: 39.25rem;*/
+  width: 100%;
   border-radius: 1rem;
   padding-block-start: 2rem;
   padding-block-end: 1.5rem;
@@ -186,12 +188,12 @@ section.contact ul li {
   font-size: 1.125rem;
   font-weight: 500;
   margin-block-end: 0.5rem;
+  color: rgba(255, 255, 255, 1);
 }
 
 form input[type='text']:-moz-placeholder,
 form input[type='email']:-moz-placeholder,
 form textarea:-moz-placeholder {
-  text-align: start;
   color: rgba(58, 55, 145, 0.4);
   font-size: 1.125rem;
   font-weight: 500;
@@ -200,8 +202,6 @@ form textarea:-moz-placeholder {
 form input[type='text']:-ms-input-placeholder,
 form input[type='email']:-ms-input-placeholder,
 form textarea:-ms-input-placeholder {
-  text-align: start;
-
   color: rgba(58, 55, 145, 0.4);
   font-size: 1.125rem;
   font-weight: 500;
@@ -210,10 +210,16 @@ form textarea:-ms-input-placeholder {
 form input[type='text']::-webkit-input-placeholder,
 form input[type='email']::-ms-input-placeholder,
 form textarea:-ms-input-placeholder {
-  text-align: start;
-
   color: rgba(58, 55, 145, 0.4);
   font-size: 1.125rem;
   font-weight: 500;
+}
+
+form input[type='text']:focus {
+  outline: none;
+}
+
+form input[type='email'] {
+  text-align: end !important;
 }
 </style>

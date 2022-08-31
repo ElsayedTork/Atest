@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-8 About__Start">
-          <h3 class="text-center">تعرفي على مراحل دورتك بالتفصيل</h3>
+          <h3>تعرفي على مراحل دورتك بالتفصيل</h3>
           <section class="About__ItemContainer">
             <div
               class="About__Item"
@@ -64,11 +64,7 @@ export default {
         this.flagbgcolor = 'rgba(173, 68, 128, 0.75)';
       }
       console.log(this.flagbgcolor);
-
     },
-    myfun(){
-      if()
-    }
   },
 };
 </script>
@@ -82,13 +78,13 @@ export default {
 .About__Start h3 {
   font-size: 40px;
   color: #fff;
-  margin-block-end: 1.25rem;
+  margin-block-end: 1.9375rem;
 }
 .About__Start .About__ItemContainer {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 .About .About__Start .About__Item {
   color: var(--main-color);
