@@ -64,7 +64,11 @@ export default {
         this.flagbgcolor = 'rgba(173, 68, 128, 0.75)';
       }
       console.log(this.flagbgcolor);
+
     },
+    myfun(){
+      if()
+    }
   },
 };
 </script>
