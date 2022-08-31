@@ -38,25 +38,23 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .About {
   background: rgba(173, 68, 128, 0.75);
   padding-block: 7.5rem;
-  .About__Start {
-    h3 {
-      font-size: 40px;
-      color: #fff;
-      margin-block-end: 1.25rem;
-    }
-    .About__ItemContainer {
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items: center;
-    }
-  }
 }
 
+.About__Start h3 {
+  font-size: 40px;
+  color: #fff;
+  margin-block-end: 1.25rem;
+}
+.About__Start .About__ItemContainer {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
 .About .About__Start .About__Item {
   color: var(--main-color);
   background-color: #fff;
