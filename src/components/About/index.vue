@@ -10,6 +10,12 @@
               v-for="stage in Stages"
               :key="stage.id"
               @click="handleClick(stage.id)"
+              @dblclick="handledblClick(stage.id)"
+              :style="{
+                backgroundColor: stage.isBgWhite
+                  ? '#fff'
+                  : 'rgba(255, 255, 255, .75)',
+              }"
             >
               <h5>{{ stage.title }}</h5>
               <p>
@@ -19,9 +25,9 @@
           </section>
         </div>
         <div class="col-4 About__End">
-          <figure class="text-center">
-            <img src="../../assets/About.png" alt="" srcset="" />
-          </figure>
+          <div class="text-start">
+            <img src="../../assets/About.png" class="" alt="" srcset="" />
+          </div>
         </div>
       </div>
     </div>
@@ -37,18 +43,21 @@ export default {
           title: '11مرحبلة ما قبل الاباضة',
           description:
             '11تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
+          isBgWhite: true,
         },
         {
           id: 2,
           title: '22مرحبلة ما قبل الاباضة',
           description:
             '22تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
+          isBgWhite: false,
         },
         {
           id: 3,
           title: '33مرحبلة ما قبل الاباضة',
           description:
             '33تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
+          isBgWhite: false,
         },
       ],
       flagbgcolor: 'rgba(139, 222, 216, 1)',
@@ -63,7 +72,14 @@ export default {
       } else if (id == 3) {
         this.flagbgcolor = 'rgba(173, 68, 128, 0.75)';
       }
-      console.log(this.flagbgcolor);
+
+      this.Stages = this.Stages.map((stage) => {
+        if (id !== stage.id) {
+          return { ...stage, isBgWhite: false };
+        } else {
+          return { ...stage, isBgWhite: true };
+        }
+      });
     },
   },
 };
@@ -88,12 +104,12 @@ export default {
 }
 .About .About__Start .About__Item {
   color: var(--main-color);
-  background-color: #fff;
   width: fit-content;
   padding-inline: 1.25rem;
   padding-block: 1.25rem;
   margin-block: 0.625rem;
   border-radius: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.75);
 }
 .About .About__Start .About__Item h5 {
   font-size: 1.5rem;
