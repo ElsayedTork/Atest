@@ -5,22 +5,10 @@
         <div class="col-8 About__Start">
           <h3 class="text-center">تعرفي على مراحل دورتك بالتفصيل</h3>
           <section class="About__ItemContainer">
-            <div class="About__Item">
-              <h5>مرحبلة ما قبل الاباضة</h5>
+            <div class="About__Item" v-for="stage in Stages" :key="stage.id">
+              <h5>{{ stage.title }}</h5>
               <p>
-                تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة
-              </p>
-            </div>
-            <div class="About__Item">
-              <h5>مرحبلة ما قبل الاباضة</h5>
-              <p>
-                تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة
-              </p>
-            </div>
-            <div class="About__Item">
-              <h5>مرحبلة ما قبل الاباضة</h5>
-              <p>
-                تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة
+                {{ stage.description }}
               </p>
             </div>
           </section>
@@ -35,7 +23,32 @@
   </section>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      Stages: [
+        {
+          id: 1,
+          title: '11مرحبلة ما قبل الاباضة',
+          description:
+            '11تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
+        },
+        {
+          id: 2,
+          title: '22مرحبلة ما قبل الاباضة',
+          description:
+            '22تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
+        },
+        {
+          id: 3,
+          title: '33مرحبلة ما قبل الاباضة',
+          description:
+            '33تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
