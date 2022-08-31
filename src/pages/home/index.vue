@@ -5,10 +5,10 @@
   <contact-com></contact-com>
 </template>
 <script>
-import AboutCom from '../../components/About/AboutCom.vue';
-import ReportCom from '../../components/Reports/ReportsCom.vue';
-import CertificateCom from '../../components/certificate/CertificateCom.vue';
-import ContactCom from '../../components/Contact/ContactCom.vue';
+import AboutCom from '../../components/About/index.vue';
+import ReportCom from '../../components/Reports/index.vue';
+import CertificateCom from '../../components/certificate/index.vue';
+import ContactCom from '../../components/Contact/index.vue';
 
 export default {
   components: {

@@ -1,11 +1,16 @@
 <template>
-  <section class="About">
+  <section class="About" :style="{ backgroundColor: flagbgcolor }">
     <div class="container">
       <div class="row">
         <div class="col-8 About__Start">
           <h3 class="text-center">تعرفي على مراحل دورتك بالتفصيل</h3>
           <section class="About__ItemContainer">
-            <div class="About__Item" v-for="stage in Stages" :key="stage.id">
+            <div
+              class="About__Item"
+              v-for="stage in Stages"
+              :key="stage.id"
+              @click="handleClick(stage.id)"
+            >
               <h5>{{ stage.title }}</h5>
               <p>
                 {{ stage.description }}
@@ -46,14 +51,27 @@ export default {
             '33تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
         },
       ],
+      flagbgcolor: 'rgba(139, 222, 216, 1)',
     };
+  },
+  methods: {
+    handleClick(id) {
+      if (id == 1) {
+        this.flagbgcolor = 'rgba(139, 222, 216, 1)';
+      } else if (id == 2) {
+        this.flagbgcolor = 'rgba(91, 86, 213, 0.85)';
+      } else if (id == 3) {
+        this.flagbgcolor = 'rgba(173, 68, 128, 0.75)';
+      }
+      console.log(this.flagbgcolor);
+    },
   },
 };
 </script>
 
 <style scoped>
 .About {
-  background: rgba(173, 68, 128, 0.75);
+  /*  background: rgba(173, 68, 128, 0.75);  */
   padding-block: 7.5rem;
 }
 

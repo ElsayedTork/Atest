@@ -66,7 +66,7 @@
   </Footer>
 </template>
 <script scoped>
-import SharedSocial from './../Shared/SharedSocial.vue';
+import SharedSocial from '../Shared/SharedSocial.vue';
 
 export default {
   components: {

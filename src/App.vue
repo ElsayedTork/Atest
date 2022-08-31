@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import HeaderCom from './components/Header/HeaderCom.vue';
-import FooterCom from './components/Footer/FooterCom.vue';
+import HeaderCom from './components/Header/index.vue';
+import FooterCom from './components/Footer/index.vue';
 
 export default {
   components: {
