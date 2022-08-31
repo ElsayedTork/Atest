@@ -4,6 +4,21 @@
 
     <!-- End Slider -->
     <h3 class="text-center">شهادات</h3>
+
+    <div class="container">
+      <Carousel :settings="settings" :breakpoints="breakpoints">
+        <Slide v-for="slide in 10" :key="slide">
+          <div class="carousel__item">
+             Elsayed
+          </div>
+        </Slide>
+
+        <template #addons>
+          <Pagination />
+          <Navigation />
+        </template>
+      </Carousel>
+    </div>
     <div class="container">
       <section class="certificate__Container">
         <div class="row gx-5">
@@ -74,14 +89,43 @@
 </template>
 
 <script>
-export default {};
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+export default {
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
+  },
+  data: () => ({
+    // carousel settings
+    settings: {
+      itemsToShow: 1,
+      snapAlign: 'center',
+    },
+    // breakpoints are mobile first
+    // any settings not specified will fallback to the carousel settings
+    breakpoints: {
+      // 700px and up
+      700: {
+        itemsToShow: 1,
+        snapAlign: 'center',
+      },
+      // 1024 and up
+      1024: {
+        itemsToShow: 3,
+        snapAlign: 'start',
+      },
+    },
+  }),
+};
 </script>
 
 <style scoped>
 .certificate {
   padding-block: 8.5rem;
   background-color: #fcf9ef;
-  /*background-color: blue;*/
 }
 .certificate h3 {
   color: var(--main-color);

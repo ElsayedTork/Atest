@@ -26,7 +26,7 @@
         </div>
         <div class="col-4 About__End">
           <div class="text-start">
-            <img src="../../assets/About.png" class="" alt="" srcset="" />
+            <img src="../../assets/aboutItem1.svg" class="" alt="" srcset="" />
           </div>
         </div>
       </div>
@@ -44,6 +44,7 @@ export default {
           description:
             '11تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
           isBgWhite: true,
+          // imgSrc: '../../assets/aboutItem1.svg',
         },
         {
           id: 2,
@@ -51,6 +52,7 @@ export default {
           description:
             '22تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
           isBgWhite: false,
+          // imgSrc: '../../assets/aboutItem1.svg',
         },
         {
           id: 3,
@@ -58,9 +60,11 @@ export default {
           description:
             '33تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
           isBgWhite: false,
+          // imgSrc: '../../assets/aboutItem1.svg',
         },
       ],
       flagbgcolor: 'rgba(139, 222, 216, 1)',
+      imgSrc: '../../assets/aboutItem1.svg',
     };
   },
   methods: {
