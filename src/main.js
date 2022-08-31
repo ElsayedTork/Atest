@@ -8,11 +8,11 @@ import "bootstrap/dist/js/bootstrap.js";
  import App from './App.vue';
  import store from './Store/index.js';
 
-import HomeCom from './pages/Home/HomeCom.vue'
-import aboutComp from './pages/About/aboutComp.vue'
-import contactComp from './pages/contact/contactComp.vue'
-import consultComp from './pages/Consult/consultComp.vue'
-import articleComp from './pages/article/articleComp.vue'
+import HomeCom from './pages/home/index.vue'
+import aboutComp from './pages/about/index.vue'
+import contactComp from './pages/contact/index.vue'
+import consultComp from './pages/consult/index.vue'
+import articleComp from './pages/article/index.vue'
  
 const routes = [
      { path: '/', component: HomeCom },
