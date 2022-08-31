@@ -2,7 +2,7 @@
     <about-com></about-com>
     <report-com></report-com>
     <certificate-com></certificate-com>
-    <contact-com></contact-com>
+    
 </template>
 <script>
 import AboutCom from './../../components/About/AboutCom.vue';
