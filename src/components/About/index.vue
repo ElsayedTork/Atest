@@ -3,11 +3,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 About__Start">
-          <div class="About__Start_son">
+          <div class="About__Start__StartSon">
             <h3>تعرفي على مراحل دورتك بالتفصيل</h3>
-            <section class="About__ItemContainer">
+            <section class="About__Start__StartSon__ItemContainer">
               <div
-                class="About__Item"
+                class="About__Start__StartSon__ItemContainer__Item"
                 v-for="stage in Stages"
                 :key="stage.id"
                 @click="handleClick(stage.id)"
@@ -29,6 +29,7 @@
         <div class="col-lg-4 About__End">
           <div class="text-lg-start text-center">
             <img
+              class="img-fluid"
               :src="require(`../../assets/${Stages[imgIdNum].imgSrc}.png`)"
               alt=""
             />
@@ -95,65 +96,68 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .About {
   padding-block: 7.5rem;
+  &__Start {
+    &__StartSon {
+      margin: 0 auto;
+      width: fit-content;
+      h3 {
+        font-size: 40px;
+        color: #fff;
+        margin-block-end: 1.9375rem;
+        font-weight: 700;
+      }
+
+      &__ItemContainer {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: start;
+        &__Item {
+          color: var(--main-color);
+          width: 33.125rem;
+          padding-inline: 1.25rem;
+          padding-block: 1.25rem;
+          margin-block: 0.625rem;
+          border-radius: 1.5rem;
+          background-color: rgba(255, 255, 255, 0.75);
+
+          h5 {
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+          p {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
 }
 
-.About__Start h3 {
-  font-size: 40px;
-  color: #fff;
-  margin-block-end: 1.9375rem;
-  font-weight: 700;
-}
-.About__Start .About__ItemContainer {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: start;
-}
-.About .About__Start .About__Item {
-  color: var(--main-color);
-  width: 33.125rem;
-  padding-inline: 1.25rem;
-  padding-block: 1.25rem;
-  margin-block: 0.625rem;
-  border-radius: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.75);
-}
-.About .About__Start .About__Item h5 {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-.About .About__Start .About__Item p {
-  font-weight: 500;
-}
-.About__End figure img {
-  height: 31.25rem;
-}
-.About__Start_son {
-  margin: 0 auto;
-  width: fit-content;
-}
 @media (max-width: 576px) {
-  .About .About__Start h3 {
-    width: 18rem;
-  }
-  .About .About__Start .About__Item {
-    width: 18rem;
-  }
-  .About__Start h3 {
-    font-size: 1.6rem;
+  .About {
+    &__Start {
+      h3 {
+        font-size: 1.5rem !important;
+      }
+      &__StartSon__ItemContainer__Item {
+        width: 18rem !important;
+      }
+    }
   }
 }
+
 @media (max-width: 992px) {
-  .About .About__Start {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-  .About .About__Start {
-    margin-block-end: 1.5625rem;
+  .About {
+    &__Start {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin-block-end: 1.5625rem;
+    }
   }
 }
 </style>
