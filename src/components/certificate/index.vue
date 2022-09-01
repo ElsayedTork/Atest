@@ -7,19 +7,38 @@
 
     <div class="container">
       <Carousel :settings="settings" :breakpoints="breakpoints">
-        <Slide v-for="slide in 10" :key="slide">
-          <div class="carousel__item">
-             Elsayed
+        <Slide v-for="slide in 5" :key="slide">
+          <div
+            class="col-sm-12 col-md-6 col-lg-4 px-3"
+            style="width: fit-content"
+          >
+            <div class="carousel__item">
+              <div class="certificate__Container__Item">
+                <h4>بتول محمد</h4>
+                <p>
+                  طهارة أكثر من مجرد تطبيق بالنسبة لي, يغطي جميع جوانب صحة
+                  المرأة واستطيع معرفة الاجابات على أسئلتي من مصدر موثوق
+                </p>
+                <ul>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                  <li><i class="fa-solid fa-star"></i></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </Slide>
 
         <template #addons>
           <Pagination />
-          <Navigation />
         </template>
       </Carousel>
     </div>
+
     <div class="container">
+      <!--       
       <section class="certificate__Container">
         <div class="row gx-5">
           <div class="col-sm-12 col-md-6 col-lg-4">
@@ -80,7 +99,7 @@
             <li></li>
           </ul>
         </div>
-      </section>
+      </section> -->
 
       <div></div>
       <!-- End Slider -->
@@ -90,13 +109,12 @@
 
 <script>
 import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+import { Carousel, Slide, Pagination } from 'vue3-carousel';
 export default {
   components: {
     Carousel,
     Slide,
     Pagination,
-    Navigation,
   },
   data: () => ({
     // carousel settings
@@ -152,8 +170,6 @@ export default {
   color: var(--main-color);
   line-height: 1.5rem;
 }
-.certificate .certificate__Container__Item ul {
-}
 .certificate .certificate__Container__Item ul li {
   display: inline-block;
 }
@@ -182,4 +198,24 @@ export default {
 .certificate_bolitsSlider ul li.active {
   background-color: var(--main-color);
 }
+
+/* Test Test */
+
+button.carousel__pagination-button {
+  color: red !important;
+}
+
+.carousel__prev--in-active,
+.carousel__next--in-active {
+  display: none;
+}
+.carousel
+  div.carousel__viewport
+  ol.carousel__pagination
+  li.carousel__pagination-item
+  button.carousel__pagination-button {
+  background-color: red !important;
+  border-radius: 50% !important;
+}
+/* test Test */
 </style>
