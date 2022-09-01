@@ -131,4 +131,11 @@ button.carousel__pagination-button {
 .certificate .container {
   max-width: 56.25rem;
 }
+
+@media (max-width: 768px) {
+  .certificate {
+    padding-block: 4em;
+    background-color: #fcf9ef;
+  }
+}
 </style>
