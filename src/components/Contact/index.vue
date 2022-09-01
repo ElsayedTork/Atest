@@ -2,7 +2,7 @@
   <section class="contact">
     <div class="container">
       <div class="row">
-        <div class="contact__data col-md-5">
+        <div class="contact__data col-lg-5">
           <header class="contact__data__heading">
             <h3>نحب أن نسمع منك</h3>
             <p>اذا كان لديك أي استفسارات تواصلي معنا</p>
@@ -22,11 +22,11 @@
           </ul>
           <SharedSocial></SharedSocial>
         </div>
-        <div class="contact__form col-md-7">
+        <div class="contact__form col-lg-7">
           <div class="d-flex justify-content-center align-items-end">
             <form @submit.prevent="submitContact">
               <div class="row">
-                <div class="col-6">
+                <div class="col-sm-6">
                   <div class="mb-3">
                     <label for="exampleInputName" class="form-label"
                       >الإسم</label
@@ -42,7 +42,7 @@
                   </div>
                 </div>
 
-                <div class="col-6">
+                <div class="col-sm-6">
                   <div class="mb-3">
                     <label for="exampleInputName" class="form-label"
                       >البريد الالكتروني</label
