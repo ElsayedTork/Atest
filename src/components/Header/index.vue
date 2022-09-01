@@ -1,9 +1,9 @@
 <template>
-  <header>
+  <header class="header">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
-        <section class="header-FlexContainer">
-          <div class="innerflex">
+        <section class="header__flex-container">
+          <div class="header__flex-container__innerflex">
             <router-link to="/" class="navbar-brand" href="#"
               ><img src="../../assets/logo.svg" alt="" srcset=""
             /></router-link>
@@ -34,7 +34,7 @@
               </li>
             </ul>
           </div>
-          <div class="header-btn-downloadApp">
+          <div class="header__flex-container__download-App">
             <a href="#" class="btn btn-success">حملي التطبيق الأن</a>
           </div>
         </section>
@@ -46,42 +46,46 @@
 export default {};
 </script>
 
-<style>
-.innerflex {
-  display: flex;
-  justify-content: space-between;
-}
-.header-FlexContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+<style lang="scss" scoped>
+.header {
+  &__flex-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &__innerflex {
+      display: flex;
+      justify-content: space-between;
+      ul.navbar-nav {
+        li.nav-item {
+          margin-inline-start: 50px;
+          .nav-link {
+            color: var(--main-color);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+    &__download-App {
+      .btn-success {
+        background-color: var(--main-color);
+      }
+    }
+  }
+  .bg-light {
+    background: #cffaf8 !important;
+    padding-block: 2rem;
+  }
 }
 
 @media (max-width: 992px) {
-  .innerflex {
+  .header__flex-container__innerflex {
     display: block;
   }
 }
-@media (max-width: 550px) {
-  .header-FlexContainer {
+@media (max-width: 576px) {
+  .header__flex-container {
     display: block;
   }
-}
-header .bg-light {
-  background: #cffaf8 !important;
-  padding-block: 2rem;
-}
-
-header nav .nav-item {
-  margin-inline-start: 50px;
-}
-
-header nav .nav-item .nav-link {
-  color: var(--main-color);
-  font-weight: 700;
-}
-
-header nav .header-btn-downloadApp .btn-success {
-  background-color: var(--main-color);
 }
 </style>

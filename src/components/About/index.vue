@@ -3,11 +3,11 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-8 About__Start">
-          <div class="About__Start_son">
+          <div class="About__Start__StartSon">
             <h3>تعرفي على مراحل دورتك بالتفصيل</h3>
-            <section class="About__ItemContainer">
+            <section class="About__Start__StartSon__ItemContainer">
               <div
-                class="About__Item"
+                class="About__Start__StartSon__ItemContainer__Item"
                 v-for="stage in Stages"
                 :key="stage.id"
                 @click="handleClick(stage.id)"
@@ -28,7 +28,11 @@
         </div>
         <div class="col-lg-4 About__End">
           <div class="text-lg-start text-center">
-            <img src="../../assets/aboutItem1.svg" class="" alt="" srcset="" />
+            <img
+              class="img-fluid"
+              :src="require(`../../assets/${Stages[imgIdNum].imgSrc}.png`)"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -46,35 +50,38 @@ export default {
           description:
             'تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
           isBgWhite: true,
-          // imgSrc: '../../assets/aboutItem1.svg',
+          imgSrc: 'aboutItemimg1',
         },
         {
           id: 2,
           title: ' مرحلة الاباضة  ',
           description: ' تتبع هذه المرحلة مهم عند التخطيط للحمل',
           isBgWhite: false,
-          // imgSrc: '../../assets/aboutItem1.svg',
+          imgSrc: 'aboutItemimg2',
         },
         {
           id: 3,
           title: ' مرحلة الدورة / الحيض',
           description: 'تتبع هذه المرحلة يساعدك على تخطيط شهرك لتكوني مستعدة ',
           isBgWhite: false,
-          // imgSrc: '../../assets/aboutItem1.svg',
+          imgSrc: 'aboutItemimg3',
         },
       ],
       flagbgcolor: 'rgba(139, 222, 216, 1)',
-      imgSrc: '../../assets/aboutItem1.svg',
+      imgIdNum: 0,
     };
   },
   methods: {
     handleClick(id) {
       if (id == 1) {
         this.flagbgcolor = 'rgba(139, 222, 216, 1)';
+        this.imgIdNum = 0;
       } else if (id == 2) {
         this.flagbgcolor = 'rgba(91, 86, 213, 0.85)';
+        this.imgIdNum = 1;
       } else if (id == 3) {
         this.flagbgcolor = 'rgba(173, 68, 128, 0.75)';
+        this.imgIdNum = 2;
       }
 
       this.Stages = this.Stages.map((stage) => {
@@ -89,65 +96,68 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .About {
   padding-block: 7.5rem;
+  &__Start {
+    &__StartSon {
+      margin: 0 auto;
+      width: fit-content;
+      h3 {
+        font-size: 40px;
+        color: #fff;
+        margin-block-end: 1.9375rem;
+        font-weight: 700;
+      }
+
+      &__ItemContainer {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: start;
+        &__Item {
+          color: var(--main-color);
+          width: 33.125rem;
+          padding-inline: 1.25rem;
+          padding-block: 1.25rem;
+          margin-block: 0.625rem;
+          border-radius: 1.5rem;
+          background-color: rgba(255, 255, 255, 0.75);
+
+          h5 {
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+          p {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
 }
 
-.About__Start h3 {
-  font-size: 40px;
-  color: #fff;
-  margin-block-end: 1.9375rem;
-  font-weight: 700;
-}
-.About__Start .About__ItemContainer {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: start;
-}
-.About .About__Start .About__Item {
-  color: var(--main-color);
-  width: 33.125rem;
-  padding-inline: 1.25rem;
-  padding-block: 1.25rem;
-  margin-block: 0.625rem;
-  border-radius: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.75);
-}
-.About .About__Start .About__Item h5 {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-.About .About__Start .About__Item p {
-  font-weight: 500;
-}
-.About__End figure img {
-  height: 31.25rem;
-}
-.About__Start_son {
-  margin: 0 auto;
-  width: fit-content;
-}
 @media (max-width: 576px) {
-  .About .About__Start h3 {
-    width: 18rem;
-  }
-  .About .About__Start .About__Item {
-    width: 18rem;
-  }
-  .About__Start h3 {
-    font-size: 1.6rem;
+  .About {
+    &__Start {
+      h3 {
+        font-size: 1.5rem !important;
+      }
+      &__StartSon__ItemContainer__Item {
+        width: 18rem !important;
+      }
+    }
   }
 }
+
 @media (max-width: 992px) {
-  .About .About__Start {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-  }
-  .About .About__Start {
-    margin-block-end: 1.5625rem;
+  .About {
+    &__Start {
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      margin-block-end: 1.5625rem;
+    }
   }
 }
 </style>
