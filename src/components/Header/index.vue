@@ -3,31 +3,11 @@
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
         <section class="header-FlexContainer">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a class="navbar-brand" href="#"
+          <div class="innerflex">
+            <router-link to="/" class="navbar-brand" href="#"
               ><img src="../../assets/logo.svg" alt="" srcset=""
-            /></a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
+            /></router-link>
             <ul class="navbar-nav mb-2 mb-lg-0">
-              <li class="nav-item">
-                <router-link
-                  to="/"
-                  class="nav-link"
-                  aria-current="page"
-                  href="#"
-                  >الرئيسية</router-link
-                >
-              </li>
               <li class="nav-item">
                 <router-link
                   to="/about"
@@ -67,10 +47,25 @@ export default {};
 </script>
 
 <style>
+.innerflex {
+  display: flex;
+  justify-content: space-between;
+}
 .header-FlexContainer {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+@media (max-width: 992px) {
+  .innerflex {
+    display: block;
+  }
+}
+@media (max-width: 550px) {
+  .header-FlexContainer {
+    display: block;
+  }
 }
 header .bg-light {
   background: #cffaf8 !important;

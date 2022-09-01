@@ -7,7 +7,7 @@ import "bootstrap/dist/js/bootstrap.js";
 
  import App from './App.vue';
  import store from './Store/index.js';
-
+ 
 import HomeCom from './pages/home/index.vue'
 import aboutComp from './pages/about/index.vue'
 import contactComp from './pages/contact/index.vue'
@@ -36,6 +36,7 @@ const routes = [
      history:createWebHistory(),
      routes
    })
+
 
 const app = createApp(App)
 

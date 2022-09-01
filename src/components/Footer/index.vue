@@ -56,7 +56,7 @@
         ></shared-social>
 
         <div class="footer-rights">
-          جميع الحقوق محفوظة<span>Tahar</span>© 2022
+          جميع الحقوق محفوظة<span class="Tahara">Tahara</span>© 2022
         </div>
         <div class="footer__privacy">
           <a class="ms-3">سياسة الخصوصية</a><a href="#">الأحكام والشروط</a>
@@ -81,9 +81,9 @@ footer {
   padding-block: 3rem;
 }
 footer .footer__container {
-  display: grid;
-  grid-template-columns: 35% 30% 35%;
+  display: flex;
 }
+
 footer .footer__container h3 {
   font-size: 1.125rem;
   font-weight: 700;
@@ -98,6 +98,7 @@ footer .footer__container .footer_DownloadApp button {
   background-color: var(--main-color);
   border-color: transparent;
   border-radius: 0.625rem;
+  width: 10rem;
 }
 
 footer .footer__container_center h4 {
@@ -116,8 +117,8 @@ footer .footer__container_center ul li a {
 }
 
 footer .Footer_GridContainer {
-  display: grid;
-  grid-template-columns: 35% 30% 35%;
+  display: flex;
+  justify-content: space-between;
 }
 
 footer .footer-rights {
@@ -129,5 +130,32 @@ footer .footer__privacy {
 
 footer .footer__privacy a {
   color: #1d1d26 !important;
+}
+
+.footer span.Tahara {
+  color: var(--main-color);
+}
+
+@media (max-width: 992px) {
+  footer .footer__container {
+    display: block;
+  }
+  footer .Footer_GridContainer {
+    text-align: center;
+    display: block;
+  }
+  footer .Footer_GridContainer div {
+    padding-block-start: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding-block: 1rem;
+  }
+}
+
+footer .footer__container_center ul li {
+  margin-block-end: 0.5rem;
 }
 </style>

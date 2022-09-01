@@ -50,8 +50,8 @@ footer ul.contact__socialMedia li {
 
 section ul.contact__socialMedia li i,
 footer ul.contact__socialMedia li i {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background: rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
