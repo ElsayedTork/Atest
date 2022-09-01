@@ -1,8 +1,5 @@
 <template>
   <section class="certificate">
-    <!-- Start Slider -->
-
-    <!-- End Slider -->
     <h3 class="text-center">شهادات</h3>
 
     <div class="container">
@@ -36,74 +33,6 @@
         </template>
       </Carousel>
     </div>
-
-    <div class="container">
-      <!--       
-      <section class="certificate__Container">
-        <div class="row gx-5">
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <div class="certificate__Container__Item">
-              <h4>بتول محمد</h4>
-              <p>
-                طهارة أكثر من مجرد تطبيق بالنسبة لي, يغطي جميع جوانب صحة المرأة
-                واستطيع معرفة الاجابات على أسئلتي من مصدر موثوق
-              </p>
-              <ul>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <div class="certificate__Container__Item">
-              <h4>بتول محمد</h4>
-              <p>
-                طهارة أكثر من مجرد تطبيق بالنسبة لي, يغطي جميع جوانب صحة المرأة
-                واستطيع معرفة الاجابات على أسئلتي من مصدر موثوق
-              </p>
-              <ul>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="col-sm-12 col-md-6 col-lg-4">
-            <div class="certificate__Container__Item">
-              <h4>بتول محمد</h4>
-              <p>
-                طهارة أكثر من مجرد تطبيق بالنسبة لي, يغطي جميع جوانب صحة المرأة
-                واستطيع معرفة الاجابات على أسئلتي من مصدر موثوق
-              </p>
-              <ul>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-                <li><i class="fa-solid fa-star"></i></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="certificate_bolitsSlider">
-          <ul>
-            <li class="active"></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-      </section> -->
-
-      <div></div>
-      <!-- End Slider -->
-    </div>
   </section>
 </template>
 
@@ -117,21 +46,18 @@ export default {
     Pagination,
   },
   data: () => ({
-    // carousel settings
     settings: {
       itemsToShow: 1,
       snapAlign: 'center',
     },
-    // breakpoints are mobile first
-    // any settings not specified will fallback to the carousel settings
+
     breakpoints: {
-      // 700px and up
-      700: {
+      576: {
         itemsToShow: 1,
         snapAlign: 'center',
       },
-      // 1024 and up
-      1024: {
+
+      992: {
         itemsToShow: 3,
         snapAlign: 'start',
       },
@@ -149,7 +75,7 @@ export default {
   color: var(--main-color);
   font-size: 2.5rem;
   font-weight: 700;
-  margin-block-end: 2.125rem;
+  margin-block-end: 3rem;
 }
 
 .certificate .certificate__Container__Item {
@@ -186,20 +112,10 @@ export default {
 .certificate_bolitsSlider ul {
   width: fit-content;
 }
-.certificate_bolitsSlider ul li {
-  width: 9px;
-  height: 9px;
-  background-color: rgba(6, 113, 106, 0.3);
-  border-radius: 50%;
-  display: inline-block;
-  margin-inline: 4px;
-}
 
 .certificate_bolitsSlider ul li.active {
   background-color: var(--main-color);
 }
-
-/* Test Test */
 
 button.carousel__pagination-button {
   color: red !important;
@@ -209,13 +125,10 @@ button.carousel__pagination-button {
 .carousel__next--in-active {
   display: none;
 }
-.carousel
-  div.carousel__viewport
-  ol.carousel__pagination
-  li.carousel__pagination-item
-  button.carousel__pagination-button {
-  background-color: red !important;
-  border-radius: 50% !important;
+.carousel__item {
+  margin-block-end: 3.5rem;
 }
-/* test Test */
+.certificate .container {
+  max-width: 56.25rem;
+}
 </style>

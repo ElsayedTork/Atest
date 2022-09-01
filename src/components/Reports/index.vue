@@ -66,12 +66,21 @@ export default {};
     width: 75%;
     line-height: 1.625rem;
   }
+  .Report__start__flexContainer {
+    padding-inline-start: 3.25rem;
+  }
 }
 
 @media (max-width: 992px) {
   .Report .Report__start p {
     width: 100%;
     line-height: 1.625rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .Report__start__flexContainer {
+    padding-inline-start: 0.5rem !important;
   }
 }
 </style>

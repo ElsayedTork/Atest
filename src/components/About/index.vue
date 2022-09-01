@@ -2,30 +2,32 @@
   <section class="About" :style="{ backgroundColor: flagbgcolor }">
     <div class="container">
       <div class="row">
-        <div class="col-8 About__Start">
-          <h3>تعرفي على مراحل دورتك بالتفصيل</h3>
-          <section class="About__ItemContainer">
-            <div
-              class="About__Item"
-              v-for="stage in Stages"
-              :key="stage.id"
-              @click="handleClick(stage.id)"
-              @dblclick="handledblClick(stage.id)"
-              :style="{
-                backgroundColor: stage.isBgWhite
-                  ? '#fff'
-                  : 'rgba(255, 255, 255, .75)',
-              }"
-            >
-              <h5>{{ stage.title }}</h5>
-              <p>
-                {{ stage.description }}
-              </p>
-            </div>
-          </section>
+        <div class="col-lg-8 About__Start">
+          <div class="About__Start_son">
+            <h3>تعرفي على مراحل دورتك بالتفصيل</h3>
+            <section class="About__ItemContainer">
+              <div
+                class="About__Item"
+                v-for="stage in Stages"
+                :key="stage.id"
+                @click="handleClick(stage.id)"
+                @dblclick="handledblClick(stage.id)"
+                :style="{
+                  backgroundColor: stage.isBgWhite
+                    ? '#fff'
+                    : 'rgba(255, 255, 255, .75)',
+                }"
+              >
+                <h5>{{ stage.title }}</h5>
+                <p>
+                  {{ stage.description }}
+                </p>
+              </div>
+            </section>
+          </div>
         </div>
-        <div class="col-4 About__End">
-          <div class="text-start">
+        <div class="col-lg-4 About__End">
+          <div class="text-lg-start text-center">
             <img src="../../assets/aboutItem1.svg" class="" alt="" srcset="" />
           </div>
         </div>
@@ -40,25 +42,23 @@ export default {
       Stages: [
         {
           id: 1,
-          title: '11مرحبلة ما قبل الاباضة',
+          title: 'مرحبلة ما قبل الاباضة',
           description:
-            '11تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
+            'تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
           isBgWhite: true,
           // imgSrc: '../../assets/aboutItem1.svg',
         },
         {
           id: 2,
-          title: '22مرحبلة ما قبل الاباضة',
-          description:
-            '22تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
+          title: ' مرحلة الاباضة  ',
+          description: ' تتبع هذه المرحلة مهم عند التخطيط للحمل',
           isBgWhite: false,
           // imgSrc: '../../assets/aboutItem1.svg',
         },
         {
           id: 3,
-          title: '33مرحبلة ما قبل الاباضة',
-          description:
-            '33تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
+          title: ' مرحلة الدورة / الحيض',
+          description: 'تتبع هذه المرحلة يساعدك على تخطيط شهرك لتكوني مستعدة ',
           isBgWhite: false,
           // imgSrc: '../../assets/aboutItem1.svg',
         },
@@ -91,7 +91,6 @@ export default {
 
 <style scoped>
 .About {
-  /*  background: rgba(173, 68, 128, 0.75);  */
   padding-block: 7.5rem;
 }
 
@@ -99,6 +98,7 @@ export default {
   font-size: 40px;
   color: #fff;
   margin-block-end: 1.9375rem;
+  font-weight: 700;
 }
 .About__Start .About__ItemContainer {
   display: flex;
@@ -108,7 +108,7 @@ export default {
 }
 .About .About__Start .About__Item {
   color: var(--main-color);
-  width: fit-content;
+  width: 33.125rem;
   padding-inline: 1.25rem;
   padding-block: 1.25rem;
   margin-block: 0.625rem;
@@ -124,5 +124,30 @@ export default {
 }
 .About__End figure img {
   height: 31.25rem;
+}
+.About__Start_son {
+  margin: 0 auto;
+  width: fit-content;
+}
+@media (max-width: 576px) {
+  .About .About__Start h3 {
+    width: 18rem;
+  }
+  .About .About__Start .About__Item {
+    width: 18rem;
+  }
+  .About__Start h3 {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 992px) {
+  .About .About__Start {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .About .About__Start {
+    margin-block-end: 1.5625rem;
+  }
 }
 </style>
