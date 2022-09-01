@@ -1,9 +1,9 @@
 <template>
   <Footer class="footer">
     <div class="container">
-      <div class="footer__container Footer_GridContainer">
+      <div class="footer__container">
         <div class="mb-4">
-          <div>
+          <div class="footer__container__up">
             <figure>
               <img
                 src="../../assets/LogoFooter.svg"
@@ -12,9 +12,9 @@
                 srcset=""
               />
             </figure>
-            <h3 class="footer__heading my-3">احصل على التطبيق</h3>
+            <h3 class="my-3">احصل على التطبيق</h3>
           </div>
-          <div class="footer_DownloadApp">
+          <div class="footer__container__download-app">
             <button href="#">
               <span>Google Play</span> <i class="fa-brands fa-google-play"></i>
             </button>
@@ -23,7 +23,7 @@
             </button>
           </div>
         </div>
-        <div class="footer__container_center">
+        <div class="footer__container__fast-links">
           <h4>روابط سريعة</h4>
           <ul>
             <li>
@@ -40,7 +40,7 @@
             </li>
           </ul>
         </div>
-        <div class="footer__container_center">
+        <div class="footer__container__info">
           <h4>معلومات التواصل</h4>
           <ul>
             <li>البريد الالكتروني : tahara@tahara.com.sa</li>
@@ -49,16 +49,16 @@
           </ul>
         </div>
       </div>
-      <div class="Footer_GridContainer">
+      <div class="footer__down">
         <shared-social
           bgColor="rgba(6, 113, 106, 0.1)"
           colorIcon="#06716A"
         ></shared-social>
 
-        <div class="footer-rights">
-          جميع الحقوق محفوظة<span class="Tahara">Tahara</span>© 2022
+        <div class="footer__down__rights">
+          جميع الحقوق محفوظة<span>Tahara</span>© 2022
         </div>
-        <div class="footer__privacy">
+        <div class="footer__down__privacy">
           <a class="ms-3">سياسة الخصوصية</a><a href="#">الأحكام والشروط</a>
         </div>
       </div>
@@ -75,65 +75,69 @@ export default {
 };
 </script>
 
-<style scoped>
-footer {
+<style lang="scss" scoped>
+.footer {
   background-color: #fffcf6;
   padding-block: 3rem;
-}
-footer .footer__container {
-  display: flex;
-}
+  &__container {
+    display: flex;
+    justify-content: space-between;
 
-footer .footer__container h3 {
-  font-size: 1.125rem;
-  font-weight: 700;
-  color: var(--main-color);
-}
+    &__up {
+      h3 {
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: var(--main-color);
+      }
+    }
 
-footer .footer__container .footer_DownloadApp button {
-  color: #fff;
-  font-weight: 700;
-  padding-inline: 1.625rem;
-  padding-block: 0.9375rem;
-  background-color: var(--main-color);
-  border-color: transparent;
-  border-radius: 0.625rem;
-  width: 10rem;
-}
+    &__download-app {
+      button {
+        color: #fff;
+        font-weight: 700;
+        padding-inline: 1.625rem;
+        padding-block: 0.9375rem;
+        background-color: var(--main-color);
+        border-color: transparent;
+        border-radius: 0.625rem;
+        width: 10rem;
+      }
+    }
+    &__fast-links,
+    &__info {
+      h4 {
+        margin-block-end: 1.5rem;
+        font-weight: 700;
+        color: var(--main-color);
+      }
+      ul {
+        li {
+          margin-block-end: 1.5rem;
+          font-weight: 500;
+          a {
+            color: #1d1d26 !important;
+          }
+        }
+      }
+    }
+  }
 
-footer .footer__container_center h4 {
-  margin-block-end: 1.5rem;
-  font-weight: 700;
-  color: var(--main-color);
-}
-
-footer .footer__container_center ul li {
-  margin-block-end: 1.5rem;
-  font-weight: 500;
-}
-
-footer .footer__container_center ul li a {
-  color: #1d1d26 !important;
-}
-
-footer .Footer_GridContainer {
-  display: flex;
-  justify-content: space-between;
-}
-
-footer .footer-rights {
-  color: #1d1d26 !important;
-}
-footer .footer__privacy {
-  font-weight: 500;
-}
-
-footer .footer__privacy a {
-  color: #1d1d26 !important;
-}
-
-.footer span.Tahara {
-  color: var(--main-color);
+  &__down {
+    display: flex;
+    justify-content: space-between;
+    &__rights {
+      color: #1d1d26 !important;
+      span {
+        color: var(--main-color);
+      }
+    }
+    &__privacy {
+      font-weight: 500;
+      a {
+        color: #1d1d26 !important;
+      }
+    }
+  }
 }
 
 @media (max-width: 992px) {

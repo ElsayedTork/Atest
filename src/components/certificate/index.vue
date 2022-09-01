@@ -10,7 +10,7 @@
             style="width: fit-content"
           >
             <div class="carousel__item">
-              <div class="certificate__Container__Item">
+              <div class="certificate__item">
                 <h4>بتول محمد</h4>
                 <p>
                   طهارة أكثر من مجرد تطبيق بالنسبة لي, يغطي جميع جوانب صحة
@@ -66,70 +66,57 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .certificate {
   padding-block: 8.5rem;
   background-color: #fcf9ef;
-}
-.certificate h3 {
-  color: var(--main-color);
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-block-end: 3rem;
-}
 
-.certificate .certificate__Container__Item {
-  background-color: #fff;
-  border-radius: 1.5rem;
-  text-align: center;
-  padding: 2rem;
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
-}
-.certificate .certificate__Container__Item h4 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--main-color);
-  margin-block-end: 0.6875rem;
-}
-.certificate .certificate__Container__Item p {
-  font-weight: 500;
-  color: var(--main-color);
-  line-height: 1.5rem;
-}
-.certificate .certificate__Container__Item ul li {
-  display: inline-block;
-}
-.certificate .certificate__Container__Item ul li i {
-  color: #ffee27;
-}
+  h3 {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-block-end: 3rem;
+  }
 
-.certificate_bolitsSlider {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  margin-block-start: 3.5rem;
-}
-.certificate_bolitsSlider ul {
-  width: fit-content;
-}
+  .certificate__item {
+    margin-block-end: 3.5rem;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    text-align: center;
+    padding: 2rem;
+    box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+    h4 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--main-color);
+      margin-block-end: 0.6875rem;
+    }
+    p {
+      font-weight: 500;
+      color: var(--main-color);
+      line-height: 1.5rem;
+    }
+    ul {
+      li {
+        display: inline-block;
 
-.certificate_bolitsSlider ul li.active {
-  background-color: var(--main-color);
-}
+        i {
+          color: #ffee27;
+        }
+      }
+      li.active {
+        background-color: var(--main-color);
+      }
+    }
+  }
 
-button.carousel__pagination-button {
-  color: red !important;
-}
-
-.carousel__prev--in-active,
-.carousel__next--in-active {
-  display: none;
-}
-.carousel__item {
-  margin-block-end: 3.5rem;
-}
-.certificate .container {
-  max-width: 56.25rem;
+  .carousel__prev--in-active,
+  .carousel__next--in-active {
+    display: none;
+  }
+  .container {
+    max-width: 56.25rem;
+  }
 }
 
 @media (max-width: 768px) {
