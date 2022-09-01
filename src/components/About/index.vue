@@ -28,7 +28,10 @@
         </div>
         <div class="col-lg-4 About__End">
           <div class="text-lg-start text-center">
-            <img src="../../assets/aboutItem1.svg" class="" alt="" srcset="" />
+            <img
+              :src="require(`../../assets/${Stages[imgIdNum].imgSrc}.png`)"
+              alt=""
+            />
           </div>
         </div>
       </div>
@@ -46,35 +49,38 @@ export default {
           description:
             'تتبع هذه المرحلة يشجعك على القيام بفعاليات مختلفة مثل الرياضة',
           isBgWhite: true,
-          // imgSrc: '../../assets/aboutItem1.svg',
+          imgSrc: 'aboutItemimg1',
         },
         {
           id: 2,
           title: ' مرحلة الاباضة  ',
           description: ' تتبع هذه المرحلة مهم عند التخطيط للحمل',
           isBgWhite: false,
-          // imgSrc: '../../assets/aboutItem1.svg',
+          imgSrc: 'aboutItemimg2',
         },
         {
           id: 3,
           title: ' مرحلة الدورة / الحيض',
           description: 'تتبع هذه المرحلة يساعدك على تخطيط شهرك لتكوني مستعدة ',
           isBgWhite: false,
-          // imgSrc: '../../assets/aboutItem1.svg',
+          imgSrc: 'aboutItemimg3',
         },
       ],
       flagbgcolor: 'rgba(139, 222, 216, 1)',
-      imgSrc: '../../assets/aboutItem1.svg',
+      imgIdNum: 0,
     };
   },
   methods: {
     handleClick(id) {
       if (id == 1) {
         this.flagbgcolor = 'rgba(139, 222, 216, 1)';
+        this.imgIdNum = 0;
       } else if (id == 2) {
         this.flagbgcolor = 'rgba(91, 86, 213, 0.85)';
+        this.imgIdNum = 1;
       } else if (id == 3) {
         this.flagbgcolor = 'rgba(173, 68, 128, 0.75)';
+        this.imgIdNum = 2;
       }
 
       this.Stages = this.Stages.map((stage) => {
