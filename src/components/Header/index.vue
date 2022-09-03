@@ -48,6 +48,11 @@ export default {};
 
 <style lang="scss" scoped>
 .header {
+  position: sticky !important;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 200;
   &__flex-container {
     display: flex;
     justify-content: space-between;
