@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar sticky-top navbar-expand-lg bg-light">
       <div class="container">
         <section class="header__flex-container">
           <div class="header__flex-container__innerflex">
