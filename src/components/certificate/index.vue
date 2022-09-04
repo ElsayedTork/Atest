@@ -44,9 +44,7 @@ export default {
     Slide,
     Pagination,
   },
-  mounted(){
-   
-  },
+  mounted() {},
   data: () => ({
     settings: {
       itemsToShow: 1,
@@ -87,6 +85,7 @@ export default {
     text-align: center;
     padding: 2rem;
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+    max-width: 20rem;
     h4 {
       font-size: 1.25rem;
       font-weight: 700;
