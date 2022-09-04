@@ -1,7 +1,6 @@
 <template>
   <section class="certificate">
     <h3 class="text-center">شهادات</h3>
-
     <div class="container">
       <Carousel :settings="settings" :breakpoints="breakpoints">
         <Slide v-for="slide in 5" :key="slide">
@@ -44,6 +43,9 @@ export default {
     Carousel,
     Slide,
     Pagination,
+  },
+  mounted(){
+   
   },
   data: () => ({
     settings: {
