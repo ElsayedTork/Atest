@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar sticky-top navbar-expand-lg bg-light">
       <div class="container">
         <section class="header__flex-container">
           <div class="header__flex-container__innerflex">
@@ -48,6 +48,11 @@ export default {};
 
 <style lang="scss" scoped>
 .header {
+  position: sticky !important;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 200;
   &__flex-container {
     display: flex;
     justify-content: space-between;

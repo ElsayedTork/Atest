@@ -56,10 +56,11 @@
         ></shared-social>
 
         <div class="footer__down__rights">
-          جميع الحقوق محفوظة<span>Tahara</span>© 2022
+          جميع الحقوق محفوظه2022<span class="mx-1">tahara</span> &#169;
         </div>
-        <div class="footer__down__privacy">
-          <a class="ms-3">سياسة الخصوصية</a><a href="#">الأحكام والشروط</a>
+        <div class="footer__down__privacy mt-md-2 mt-1">
+          <a class="#">سياسة الخصوصية</a
+          ><a href="#" class="ms-3">الأحكام والشروط</a>
         </div>
       </div>
     </div>
@@ -150,6 +151,9 @@ export default {
   }
   footer .Footer_GridContainer div {
     padding-block-start: 1.25rem;
+  }
+  .footer__down {
+    display: block;
   }
 }
 
