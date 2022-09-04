@@ -1,20 +1,22 @@
 <template>
   <section class="certificate">
     <h3 class="text-center">شهادات</h3>
-
     <div class="container">
-      <Carousel :settings="settings" :breakpoints="breakpoints">
-        <Slide v-for="slide in 5" :key="slide">
+      <Carousel
+        :settings="settings"
+        :breakpoints="breakpoints"
+        v-if="certifications.length > 0"
+      >
+        <Slide v-for="slide in certifications" :key="slide.id">
           <div
             class="col-sm-12 col-md-6 col-lg-4 px-3"
             style="width: fit-content"
           >
             <div class="carousel__item">
               <div class="certificate__item">
-                <h4>بتول محمد</h4>
+                <h4>{{ slide.name }}</h4>
                 <p>
-                  طهارة أكثر من مجرد تطبيق بالنسبة لي, يغطي جميع جوانب صحة
-                  المرأة واستطيع معرفة الاجابات على أسئلتي من مصدر موثوق
+                  {{ slide.body }}
                 </p>
                 <ul>
                   <li><i class="fa-solid fa-star"></i></li>
@@ -32,6 +34,11 @@
           <Pagination />
         </template>
       </Carousel>
+      <div v-else class="text-center">
+        <div class="spinner-border text-success" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -45,6 +52,7 @@ export default {
     Slide,
     Pagination,
   },
+
   data: () => ({
     settings: {
       itemsToShow: 1,
@@ -63,6 +71,16 @@ export default {
       },
     },
   }),
+
+  computed: {
+    certifications() {
+      return this.$store.state.certifications;
+    },
+  },
+  mounted() {
+    this.$store.dispatch('actionCertifications');
+    console.log(this.certification);
+  },
 };
 </script>
 
@@ -85,6 +103,7 @@ export default {
     text-align: center;
     padding: 2rem;
     box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.1);
+    max-width: 20rem;
     h4 {
       font-size: 1.25rem;
       font-weight: 700;

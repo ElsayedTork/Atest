@@ -26,7 +26,7 @@
           <div class="d-flex justify-content-center align-items-end">
             <form @submit.prevent="submitContact">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-md-6">
                   <div class="mb-3">
                     <label for="exampleInputName" class="form-label"
                       >الإسم</label
@@ -37,12 +37,12 @@
                       id="exampleInputName"
                       placeholder="اسم المستخدم"
                       aria-describedby="emailHelp"
-                      v-model="formData.nameForm"
+                      v-model="formData.name"
                     />
                   </div>
                 </div>
 
-                <div class="col-sm-6">
+                <div class="col-md-6">
                   <div class="mb-3">
                     <label for="exampleInputName" class="form-label"
                       >البريد الالكتروني</label
@@ -53,7 +53,24 @@
                       id="exampleInputName"
                       placeholder="example@gmail.com"
                       aria-describedby="emailHelp"
-                      v-model="formData.emailForm"
+                      v-model="formData.email"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label for="exampleInputName" class="form-label"
+                      >رقم الهاتف</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control shadow-none"
+                      id="exampleInputName"
+                      placeholder="رقم الهاتف"
+                      aria-describedby="emailHelp"
+                      v-model="formData.phone"
                     />
                   </div>
                 </div>
@@ -69,8 +86,23 @@
                     id="exampleInputName"
                     placeholder="عنوان الموضوع"
                     aria-describedby="emailHelp"
-                    v-model="formData.title"
+                    v-model="formData.subject"
                   />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <select
+                    class="form-select form-select-lg mb-3"
+                    aria-label=".form-select-lg example"
+                    v-model="formData.reason"
+                  >
+                    <option selected></option>
+                    <option value="1">complaint</option>
+                    <option value="2">suggest</option>
+                    <option value="3">review</option>
+                    <option value="3">question</option>
+                  </select>
                 </div>
               </div>
               <div class="row">
@@ -83,7 +115,7 @@
                     placeholder="أكتب رسالتك..."
                     id="exampleFormControlTextarea1"
                     rows="3"
-                    v-model="formData.message"
+                    v-model="formData.body"
                   ></textarea>
                 </div>
               </div>
@@ -98,15 +130,17 @@
 
 <script>
 import SharedSocial from './../Shared/SharedSocial.vue';
-import axios from 'axios';
+
 export default {
   data() {
     return {
       formData: {
-        nameForm: '',
+        name: '',
         email: '',
-        title: '',
-        message: '',
+        phone: '',
+        subject: '',
+        reason: '',
+        body: '',
       },
     };
   },
@@ -114,15 +148,10 @@ export default {
     SharedSocial,
   },
   methods: {
-    //  ...mapActions(['sendDataForm']),
-    //     sendDataForm() {
-    //     this.sendDataForm(this.formData)
-    // this.$store.dispatch("sendDataForm", this.formData)
     submitContact() {
-      axios.post(
-        'https://about-vue-call-default-rtdb.firebaseio.com/formData.json',
-        this.formData
-      );
+      console.log(this.formData);
+
+      this.$store.dispatch('sendDataForm', this.formData);
       this.formData = [];
     },
   },
@@ -172,7 +201,8 @@ export default {
         font-weight: 500;
       }
       input,
-      textarea {
+      textarea,
+      select {
         background-color: rgba(241, 232, 248, 0.5) !important;
         border-color: transparent;
         padding: 1rem;
