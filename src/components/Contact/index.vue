@@ -26,7 +26,7 @@
           <div class="d-flex justify-content-center align-items-end">
             <form @submit.prevent="submitContact">
               <div class="row">
-                <div class="col-sm-6">
+                <div class="col-md-6">
                   <div class="mb-3">
                     <label for="exampleInputName" class="form-label"
                       >الإسم</label
@@ -42,7 +42,7 @@
                   </div>
                 </div>
 
-                <div class="col-sm-6">
+                <div class="col-md-6">
                   <div class="mb-3">
                     <label for="exampleInputName" class="form-label"
                       >البريد الالكتروني</label
@@ -201,7 +201,8 @@ export default {
         font-weight: 500;
       }
       input,
-      textarea {
+      textarea,
+      select {
         background-color: rgba(241, 232, 248, 0.5) !important;
         border-color: transparent;
         padding: 1rem;

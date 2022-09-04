@@ -59,16 +59,50 @@ export default {};
 }
 
 @media (max-width: 992px) {
-  .report__start__flex-container {
-    padding-inline-start: 0.5rem !important;
-    padding-block: 2rem;
-    h3 {
-      text-align: center !important;
-      width: 100%;
+  .report {
+    background-image: url('./../../assets/Report.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 33rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__start {
+      background-position: 50% -30px;
+      &__flex-container {
+        padding-inline-start: 0.5rem !important;
+        padding-block: 2rem;
+        h3 {
+          width: 100%;
+        }
+        p {
+          width: 50%;
+        }
+      }
     }
+    &__end {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .report__start__flex-container {
     p {
-      text-align: center;
-      width: 100%;
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .report {
+    &__start {
+      background-position: 5% -30px;
+      &__start__flex-container {
+        p {
+          width: 100% !important;
+        }
+      }
     }
   }
 }
