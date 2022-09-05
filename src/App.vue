@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import HeaderCom from './components/Header/HeaderCom.vue';
-import FooterCom from './components/Footer/FooterCom.vue';
+import HeaderCom from './components/Header/index.vue';
+import FooterCom from './components/Footer/index.vue';
 
 export default {
   components: {
@@ -21,10 +21,13 @@ export default {
 
 <style>
 @import url('http://fonts.cdnfonts.com/css/tajawal');
+
 :root {
   --main-color: #06716a;
   --second-color: #3a3791;
+  ----vc-pgn-background-color: red;
 }
+
 .colorIcon {
   color: #fff !important;
 }
@@ -45,5 +48,19 @@ ul li {
 body {
   font-family: 'Tajawal', sans-serif;
   box-sizing: border-box;
+}
+
+ol.carousel__pagination
+  li.carousel__pagination-item
+  button.carousel__pagination-button {
+  background-color: rgba(6, 113, 106, 0.3);
+  width: 9px;
+  height: 8px;
+}
+
+ol.carousel__pagination
+  li.carousel__pagination-item
+  button.carousel__pagination-button--active {
+  background: rgba(6, 113, 106, 1);
 }
 </style>

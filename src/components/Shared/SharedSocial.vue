@@ -1,5 +1,5 @@
 <template>
-  <ul class="contact__socialMedia">
+  <ul class="contact__social-media">
     <li>
       <a href="#">
         <i
@@ -36,27 +36,25 @@ export default {
   },
 };
 </script>
-<style>
-section ul.contact__socialMedia li,
-footer ul.contact__socialMedia li {
+<style lang="scss">
+ul.contact__social-media li,
+ul.contact__social-media li {
   display: inline-block;
-}
-
-section ul.contact__socialMedia li a,
-footer ul.contact__socialMedia li {
-  color: #fff !important;
-  margin-inline-end: 0.75rem;
-}
-
-section ul.contact__socialMedia li i,
-footer ul.contact__socialMedia li i {
-  width: 50px;
-  height: 50px;
-  background: rgba(255, 255, 255, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-inline: 0.75rem;
-  border-radius: 50%;
+  a {
+    color: #fff !important;
+    margin-inline-end: 0.75rem;
+  }
+  i,
+  svg {
+    width: 18px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.1) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 0.75rem;
+    border-radius: 50%;
+    padding: 10px;
+  }
 }
 </style>
