@@ -50,10 +50,7 @@
         </div>
       </div>
       <div class="footer__down">
-        <shared-social
-          bgColor="rgba(6, 113, 106, 0.1)"
-          colorIcon="#06716A"
-        ></shared-social>
+        <shared-social bgColor="red" colorIcon="#06716A"></shared-social>
 
         <div class="footer__down__rights">
           جميع الحقوق محفوظه2022<span class="mx-1">tahara</span> &#169;

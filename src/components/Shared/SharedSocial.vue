@@ -36,7 +36,7 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 ul.contact__social-media li,
 ul.contact__social-media li {
   display: inline-block;
@@ -44,15 +44,17 @@ ul.contact__social-media li {
     color: #fff !important;
     margin-inline-end: 0.75rem;
   }
-  i {
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
+  i,
+  svg {
+    width: 18px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.1) !important;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-inline: 0.75rem;
     border-radius: 50%;
+    padding: 10px;
   }
 }
 </style>

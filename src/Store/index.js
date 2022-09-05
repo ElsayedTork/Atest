@@ -17,12 +17,14 @@
     actionCertifications({commit}){
         axios.get('https://inovola-stage.com/tahara-backend/api/reviews').then(response => {
             commit('setCertifications',response.data.data);
+            
         });
              
              
     },
-         sendDataForm(_, formData){
-             axios.post('https://inovola-stage.com/tahara-backend/api/send-contact',this.formData)
+         sendDataForm(_,formData){
+             axios.post('https://inovola-stage.com/tahara-backend/api/send-contact',formData)
+             
      }
     
     }
