@@ -19,7 +19,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import url('http://fonts.cdnfonts.com/css/tajawal');
 
 :root {
@@ -50,17 +50,23 @@ body {
   box-sizing: border-box;
 }
 
-ol.carousel__pagination
-  li.carousel__pagination-item
-  button.carousel__pagination-button {
-  background-color: rgba(6, 113, 106, 0.3);
-  width: 9px;
-  height: 8px;
+p {
+  font-weight: 500;
 }
 
-ol.carousel__pagination
-  li.carousel__pagination-item
-  button.carousel__pagination-button--active {
-  background: rgba(6, 113, 106, 1);
+/* carousel */
+ol.carousel__pagination {
+  li.carousel__pagination-item {
+    .carousel__pagination-button {
+      background-color: rgba(6, 113, 106, 0.3);
+      width: 9px;
+      height: 8px;
+    }
+
+    button.carousel__pagination-button--active {
+      background: rgba(6, 113, 106, 1);
+    }
+  }
 }
+
 </style>
