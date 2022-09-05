@@ -51,7 +51,7 @@
       </div>
       <div class="footer__down">
         <shared-social
-          bgColor="rgba(6, 113, 106, 0.1)"
+          bgColor="rgba(6, 113, 106, 0.1);"
           colorIcon="#06716A"
         ></shared-social>
 

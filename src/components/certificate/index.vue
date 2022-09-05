@@ -79,7 +79,6 @@ export default {
   },
   mounted() {
     this.$store.dispatch('actionCertifications');
-    console.log(this.certification);
   },
 };
 </script>

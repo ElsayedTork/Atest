@@ -1,6 +1,6 @@
 <template>
   <section class="contact">
-    <div class="container">
+     <div class="container">
       <div class="row">
         <div class="contact__data col-lg-5">
           <header class="contact__data__heading">
@@ -97,11 +97,10 @@
                     aria-label=".form-select-lg example"
                     v-model="formData.reason"
                   >
-                    <option selected></option>
-                    <option value="1">complaint</option>
-                    <option value="2">suggest</option>
-                    <option value="3">review</option>
-                    <option value="3">question</option>
+                    <option value="complaint">complaint</option>
+                    <option value="suggest">suggest</option>
+                    <option value="review">review</option>
+                    <option value="question">question</option>
                   </select>
                 </div>
               </div>
@@ -149,10 +148,15 @@ export default {
   },
   methods: {
     submitContact() {
-      console.log(this.formData);
-
       this.$store.dispatch('sendDataForm', this.formData);
-      this.formData = [];
+      this.formData = {
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        reason: '',
+        body: '',
+      };
     },
   },
 };
